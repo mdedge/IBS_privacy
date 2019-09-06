@@ -1,0 +1,8 @@
+genotypename:    /home/shared/datasets/human_origins/v37.2.1240K_HumanOrigins.geno
+snpname:         /home/shared/datasets/human_origins/v37.2.1240K_HumanOrigins.snp # or example.map, either works 
+indivname:       /home/shared/datasets/human_origins/v37.2.1240K_HumanOrigins.ind # or example.ped, either works
+outputformat:    PED
+genotypeoutname: /home/shared/datasets/human_origins/v37.2.1240K_HumanOrigins.ped
+snpoutname:      /home/shared/datasets/human_origins/v37.2.1240K_HumanOrigins.pedsnp
+indivoutname:    /home/shared/datasets/human_origins/v37.2.1240K_HumanOrigins.pedind
+familynames:     NO
