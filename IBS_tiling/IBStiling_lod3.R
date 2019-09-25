@@ -97,7 +97,7 @@ pintersect(g1[queryHits(ov)], g2[subjectHits(ov)])}, h1, h2)
 chr.lengths.ibd <- lapply(all.ranges.chr.list, function(x){sum(width(reduce(x)))})
 tot.length <- sum(as.numeric(chr.lengths.ibd))
 
-save.image("figures/ibd_rangelists_872_lod3.RData")
+#save.image("figures/ibd_rangelists_872_lod3.RData")
 #load("figures/ibd_rangelists_872_lod3.RData")
 
 print(summary((h1.covered[, 1, 9, 1] + h2.covered[, 1, 9, 1])/2))

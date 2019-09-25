@@ -17,8 +17,10 @@
 #Note: It'd save a bit of time just to phase the probe part, but this doesn't take very long as it is.
 
 chromo="19" #the chromosome to pull
-lbcoord="43834377" #the lower bound of the probe part
-ubcoord="47047801" #the upper bound of the probe part
+lbcoord="45136023" #the lower bound of the probe part
+#lbcoord="43834377" #the lower bound of the probe part
+ubcoord="45817621" #the upper bound of the probe part
+#ubcoord="47047801" #the upper bound of the probe part
 lbcl=$lbcoord-1
 ubcr=$ubcoord+1
 
@@ -96,5 +98,18 @@ java -Xss5m -Xmx50g -jar ../IBS_tiling/refined-ibd.16May19.ad5.jar gt=real_and_p
 
 gunzip IBD_real_and_probe.chr$chromo.lb$lbcoord.ub$ubcoord.vcf.gz.ibd.gz
 
+
+#################3
+#phase with germline in haploid mode
+
+#First, convert file to ped
+plink --vcf real_and_probe.chr$chromo.lb$lbcoord.ub$ubcoord.vcf.gz --recode --out probe_ped.lb$lbcoord.ub$ubcoord
+
+#call IBD with germline
+../IBS_tiling/germline -min_m 1cM -haploid -input probe_ped.lb$lbcoord.ub$ubcoord.ped ../IBS_tiling/plink.GRCh37.map.allsites/plink.chr$chromo.GRCh37.allsites.map -output ibd_rp_chr$chromo.lb$lbcoord.ub$ubcoord.germlinehaploid -err_hom 0 -err_het 0 -w_extend -bits 16
+
+rm *.map
+rm *.nosex
+rm *.log
 
 

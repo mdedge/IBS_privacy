@@ -178,8 +178,8 @@ bcftools annotate -Oz -x 'ID' -I +'%CHROM:%POS:%REF:%ALT' out/HO_Euro_vcf.vcf.gz
 bcftools index out/HO_Euro_vcf.IDcpra.vcf.gz
 bcftools index out/EUR_1kg_HOpos_allchr_SNPs_only.recode.IDcpra.vcf.gz
 
-vcftools --gzvcf out/HO_Euro_vcf.IDcpra.vcf.gz
-vcftools --gzvcf out/EUR_1kg_HOpos_allchr_SNPs_only.recode.IDcpra.vcf.gz
+#vcftools --gzvcf out/HO_Euro_vcf.IDcpra.vcf.gz
+#vcftools --gzvcf out/EUR_1kg_HOpos_allchr_SNPs_only.recode.IDcpra.vcf.gz
 
 #merge HO and 1000 genomes
 bcftools merge -m both -O z -o out/HO_Euro_1kg.vcf.gz out/HO_Euro_vcf.IDcpra.vcf.gz out/EUR_1kg_HOpos_allchr_SNPs_only.recode.IDcpra.vcf.gz
